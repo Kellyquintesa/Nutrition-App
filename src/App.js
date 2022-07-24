@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
 function App() {
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": "d084387890msh56f569523afc551p1cd8dajsn1c40dee94a8c",
+      "X-RapidAPI-Host": "edamam-food-and-grocery-database.p.rapidapi.com",
+    },
+  };
+
+  fetch(
+    "https://edamam-food-and-grocery-database.p.rapidapi.com/parser?ingr=apple",
+    options
+  )
+    .then((response) => response.json())
+    .then((response) => console.log(response))
+    .catch((err) => console.error(err));
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>halo</h1>
     </div>
   );
 }
